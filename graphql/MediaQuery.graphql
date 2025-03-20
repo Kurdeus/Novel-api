@@ -1,0 +1,177 @@
+query MediaQuery($id:Int) {
+    Media(id:$id) {
+        id
+        idMal
+        type
+        format
+        season
+        seasonYear
+        episodes
+        duration
+        chapters
+        volumes
+        countryOfOrigin
+        source
+        bannerImage
+        genres
+        synonyms
+        averageScore
+        meanScore
+        trending
+        favourites
+        popularity
+        status
+        description(asHtml: false)
+        isAdult
+        siteUrl
+
+
+        title {
+            romaji
+            english
+            native
+            userPreferred
+        }
+        startDate {
+            year
+            month
+            day
+        }
+        endDate {
+            year
+            month
+            day
+        }
+        trailer {
+            id
+            site
+            thumbnail
+        }
+        coverImage {
+            extraLarge
+            large
+            medium
+        }
+ 
+        tags {
+            id
+            name
+            description
+            category
+            rank
+            isGeneralSpoiler
+            isMediaSpoiler
+            isAdult
+        }
+        relations {
+            edges {
+                node {
+                    id
+                    title {
+                        romaji
+                        english
+                        native
+                        userPreferred
+                    }
+                    type
+                    format
+                    coverImage {
+                        extraLarge
+                        large
+                        medium
+                    }
+                    countryOfOrigin
+                }
+                relationType
+            }
+        }
+        
+        characters(sort: [ROLE, RELEVANCE, ID]){
+                edges {
+                id
+                role
+                voiceActors(
+                language: JAPANESE, 
+                sort: [RELEVANCE, ID]
+                ) {
+                id
+                age
+                description
+                gender
+                
+                name {
+                    first
+                    middle
+                    last
+                    full
+                    native
+                    userPreferred
+                }
+                image {
+                    large
+                    medium
+                }
+                }
+                node {
+                    id
+                    
+                    age
+                    description
+                    gender
+                    name {
+                        first
+                        middle
+                        last
+                        full
+                        native
+                        userPreferred
+                    }
+                    image {
+                        large
+                        medium
+                    }
+                    }
+                }
+            }
+        staff(sort:[RELEVANCE, ID]) {
+            edges {
+                id
+                role
+                node {
+                    id
+                    age
+                    description
+                    gender
+                    name {
+                        first
+                        middle
+                        last
+                        full
+                        native
+                        alternative
+                        userPreferred
+                    }
+                    image {
+                        large
+                        medium
+                    }
+                }
+            }
+        }
+        studios {
+            edges {
+                node {
+                    id
+                    name
+                    isAnimationStudio
+                }
+                id
+                isMain
+            }
+        }
+    
+    }
+}
+
+
+    

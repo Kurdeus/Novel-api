@@ -1,0 +1,16 @@
+fastapi
+uvicorn[standard]
+python-dotenv
+urllib3
+beautifulsoup4
+lxml
+requests
+psutil
+tenacity
+sqlalchemy==2.0.23
+databases
+bcrypt
+python-jose==3.3.0
+pydantic-settings==2.1.0
+python-multipart
+aiohttp

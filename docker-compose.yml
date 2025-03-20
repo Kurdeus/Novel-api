@@ -1,0 +1,22 @@
+version: '3.10'
+
+services:
+  flask:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    command: bash start.sh
+    restart: on-failure
+    stop_signal: SIGKILL
+    ports:
+      - "5000:5000"
+    
+    environment:
+      - CONFIG_FILE_URL=https://gist.githubusercontent.com/Kurdeus/0e129c798160554e9407119e705a88e1/raw/config.env
+
+
+
+    
+    
+
+      
